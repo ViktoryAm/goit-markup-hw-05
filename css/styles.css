@@ -90,6 +90,8 @@ body {
 .nav-link {
   padding-top: 32px;
   padding-bottom: 32px;
+
+
 }
 
 /*Logo*/
@@ -137,9 +139,13 @@ body {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  position: relative;
 
   color: #212121;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .menu-link:hover,
 .menu-link:focus {
   color: var(--accent-color-nav);
@@ -147,6 +153,19 @@ body {
 
 .menu .menu-link.current {
   color: var(--accent-color-nav);
+}
+
+.menu .menu-link.current::after {
+  display: block;
+  width: 100%;
+  height: 4px;
+  content: "";
+  background-color: #2196F3;
+  border-radius: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
 }
 
 /*Контакты*/
@@ -178,9 +197,17 @@ body {
   margin-right: 10px;
 }
 
+.mail-contact {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .mail-contact:hover,
 .mail-contact:focus {
   color: var(--accent-color-nav);
+}
+
+.header-mail-icon,
+.header-phone-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail-contact:hover .header-mail-icon,
@@ -188,6 +215,9 @@ body {
   fill: var(--accent-color-nav);
 }
 
+.phone-contact{
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .phone-contact:hover,
 .phone-contact:focus {
   color: var(--accent-color-nav);
@@ -203,7 +233,7 @@ body {
 .hero {
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero/bg.jpg");
   background-size: cover;
-  width: 1600px;
+  max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
   
@@ -244,6 +274,8 @@ body {
   border-radius: 4px;
   margin-left: auto;
   margin-right: auto;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btn:hover,
 .modal-btn:focus {
@@ -293,19 +325,42 @@ body {
 
 
 /*Мы занимаемся*/
-
+.we-do {
+    
+}
 .we-do-list {
   display: flex;
   margin-top: -30px;
   margin-left: -30px;
+  
 }
 
 .we-do-item {
   flex-basis: calc((100% - 90px) / 3);
   margin-top: 30px;
   margin-left: 30px;
+  position: relative;
+  
 }
-
+.we-do-description-wrapper {
+  display: block;
+  background: rgba(47, 48, 58, 0.8);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 370px;
+}
+.we-do-img-description {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 27px 15px;
+  color: #FFFFFF;
+  
+}
 /*Наша команда*/
 
 .team {
@@ -367,6 +422,8 @@ margin-right: 10px;
   height: 44px;
   background-color: #FFFFFF;
   border-radius: 50%;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .social-list-icon {
@@ -376,6 +433,10 @@ margin-right: 10px;
 .social-list-link:hover,
 .social-list-link:focus {
   background-color: var(--accent-color-nav);
+}
+
+.social-list-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-list-link:hover .social-list-icon,
@@ -409,10 +470,14 @@ margin-right: 10px;
   justify-content: center;
   align-items: center;
 
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .clients-list-icon {
   fill: rgba(175, 177, 184, 1);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-list-link:hover,
@@ -489,7 +554,9 @@ margin-right: 10px;
 .footer-social-icon {
   fill: #FFFFFF;
 }
-
+.footer-social-link {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .footer-social-link:hover,
 .footer-social-link:focus {
   background-color: var(--accent-color-nav);
@@ -557,6 +624,8 @@ margin-right: 10px;
   border: transparent;
   border-radius: 4px;
   cursor: pointer;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-button:hover,
@@ -602,11 +671,59 @@ margin-right: 10px;
 }
 .categories-link {
   display: block;
-
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .categories-link:hover, 
 .categories-link:focus {
   background: #FFFFFF;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+/* МОДАЛЬНОЕ ОКНО */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  /*чтобы растянуть вариант 2
+  bottom: 0;
+  right: 0;*/
+  transition: opacity 500ms linear, visibility 500ms linear;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 580px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.backdrop.is-hidden {
+  opacity: 0; /*делает элемент прозрачным*/
+  visibility: hidden;
+  pointer-events: none; /*делают элемент неощутимым для мыши*/
 }
